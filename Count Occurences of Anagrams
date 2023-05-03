@@ -1,0 +1,26 @@
+//Count Occurences of Anagrams
+class Solution {
+    static boolean areAnagram(String pat, String s) {
+		char[] pat_char = pat.toCharArray();
+		Arrays.sort(pat_char);
+		
+		char[] s_char = s.toCharArray();
+		Arrays.sort(s_char);
+		if(Arrays.equals(pat_char, s_char))
+			return true;
+		else
+			return false;
+	}
+    int search(String pat, String txt) {
+        int N = txt.length();
+		int n = pat.length();
+		
+		int c = 0;
+		for(int i=0; i<=N-n; i++) {
+			String s = txt.substring(i, i+n);
+			if(areAnagram(pat,s))
+				c++;
+		}
+		return c;
+    }
+}
