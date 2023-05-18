@@ -1,0 +1,108 @@
+//To print first n natural number 
+import java.util.*;
+class print_n {
+  int i=1;
+  void main()
+  {
+    int n;
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the number range");
+    n=sc.nextInt();
+    f(n);
+  }
+  void f(int n){
+    if(i==n+1)
+    return;
+    else 
+    {System.out.println(i);
+    return f(i);
+    i++;
+    }
+  }
+}
+
+//to print reverse of first n natural number
+
+import java.util.*;
+class print_n {
+  //int i=1;
+  void main()
+  {
+    int n;
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the number range");
+    n=sc.nextInt();
+    f(n);
+  }
+  void f(int i){
+    if(i<1)
+    return;
+    else 
+    {System.out.println(i);
+    return f(i);
+    i--;
+    }
+  }
+}
+
+
+//To print first array element using array
+import java.util.*;
+class PrintArray {
+    void Array(int[] data, int index) {
+        if (index != -1) {
+            Array(data,index - 1);
+            System.out.println(data[index]);
+        }
+    }
+    void main(String[] args) {
+        int[] data = {66,33,88,99,100};
+        System.out.println("Sequential Order");
+        Array(data,data.length - 1);
+    }
+  }
+  
+  //To print reverse of an array 
+  import java.util.*;
+  class PrintArray {
+    //To display array in sequential order.
+    public static void printMyArray(int[] data, int index) {
+        if (index != -1) {
+            printMyArray(data,index - 1);
+            System.out.println(data[index]);
+        }
+    }
+     
+    //To display array in reverse order.
+    ArrayReverse(int[] data, int index) {
+        if (index != -1) {
+            System.out.println(data[index]);
+            ArrayReverse(data,index - 1);
+        }
+    }
+     
+     void main(String[] args) {
+        int[] data = {66,33,88,99,100};
+        System.out.println("Reverse Order");
+        ArrayReverse(data,data.length - 1);
+    }
+  }
+  
+  //To find the max of an array 
+  import java.util.*;
+  class Max
+{
+  void main(String[] args)
+  {
+    int[] arr = {10, 5, 7, 9, 15, 6, 11, 8, 12, 2, 3};
+    int max = Max(arr, arr.length);
+    System.out.println("Maximum element: " + max);
+  }
+ 
+  int Max(int[] arr, int length)
+  {
+    if (length == 1)
+      return arr[0];
+    return Math.max(recursiveMax(arr, length - 1), arr[length - 1]);
+  }
+
